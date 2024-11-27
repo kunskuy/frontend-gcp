@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Saya</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --text-color: black;
+            --chakra-colors-whitish: #f0f0f0;
+        }
+
+        body {
+            font-family: 'IBM Plex Mono', sans-serif;
+            background-color: rgba(0, 0, 0, 0);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        h1 {
+            color: #333;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        img {
+            margin-top: 20px;
+        }
+
+        .profile-img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            display: block;
+            margin: 0 auto;
+            margin-bottom: 20px;
+            border: 2px solid black;
+        }
+
+        p {
+            font-size: 18px;
+            color: #666;
+            margin: 10px 0;
+        }
+
+        .profile-container,
+        .gallery-container {
+            width: 90%;
+            max-width: 600px;
+            background-color: var(--chakra-colors-whitish);
+            border-radius: 8px;
+            box-shadow: 10px 10px 0 0 var(--text-color);
+            border: 2px solid black;
+            padding: 20px;
+            display: none;
+            transition: all 0.3s ease;
+        }
+
+        #toggle:checked~.gallery-container {
+            display: block;
+        }
+
+        #toggle:not(:checked)~.profile-container {
+            display: block;
+        }
+
+        .profile-text,
+        .favorite-game-text {
+            font-family: 'Comfortaa', sans-serif;
+            font-size: 22px;
+            font-weight: bold;
+            color: #333;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            padding: 0 20px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            border: 2px solid black;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .gallery .image-container {
+            position: relative;
+        }
+
+        .gallery .image-container .char-name {
+            display: none;
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            color: white;
+            padding: 5px;
+            font-size: 16px;
+            border-radius: 5px;
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+
+        .gallery .image-container:hover .char-name {
+            display: block;
+        }
+
+        .toggle-button {
+            display: block;
+            margin: 20px auto 0;
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            text-align: center;
+            font-family: 'Comfortaa', sans-serif;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            border: 2px solid black;
+            border-radius: 8px;
+        }
+
+        .toggle-button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="checkbox" id="toggle" style="display:none;">
+    <div class="profile-container">
+        <p class="profile-text">My Personal Information</p>
+        <img src="https://storage.googleapis.com/third-nature-436706-t4.appspot.com/profile.jpg" alt="Foto Profil"
+            class="profile-img" onerror="this.onerror=null; this.src='assets/images/profile.jpg';">
+
+        <div class="about-container">
+            <p class="about-text"><strong>Name:</strong> Ikhwan Kuncoro Yakti</p>
+            <p class="about-text"><strong>Email:</strong> ikhwankuncoroyakti@gmail.com</p>
+            <p class="about-text"><strong>About:</strong> Hello, everyone! I’m Kun, a motivated individual with a strong
+                desire to become a Full Stack Web Developer. My journey in the world of web development has been a
+                thrilling adventure, and I am eager to take on new challenges to craft innovative solutions. Equipped
+                with a solid foundation in programming languages, I am committed to honing my skills and learning new
+                technologies. Let's connect and collaborate to build web applications together!</p>
+        </div>
+        <label for="toggle" class="toggle-button">Switch to Gallery</label>
+    </div>
+
+    <div class="gallery-container">
+        <p class="favorite-game-text">Character Game Favorit</p>
+        <div class="gallery">
+            <div class="image-container">
+                <img 
+                    src="https://storage.googleapis.com/third-nature-436706-t4.appspot.com/1.jpg" 
+                    alt="Gambar 1" 
+                    onerror="this.onerror=null; this.src='assets/images/1.jpg';">
+                <div class="char-name">Raiden Shogun</div>
+            </div>
+            <div class="image-container">
+                <img 
+                    src="https://storage.googleapis.com/third-nature-436706-t4.appspot.com/2.jpg" 
+                    alt="Gambar 2" 
+                    onerror="this.onerror=null; this.src='assets/images/2.jpg';">
+                <div class="char-name">White Queen</div>
+            </div>
+            <div class="image-container">
+                <img 
+                    src="https://storage.googleapis.com/third-nature-436706-t4.appspot.com/3.jpg" 
+                    alt="Gambar 3" 
+                    onerror="this.onerror=null; this.src='assets/images/3.jpg';">
+                <div class="char-name">Jingliu</div>
+            </div>
+            <div class="image-container">
+                <img 
+                    src="https://storage.googleapis.com/third-nature-436706-t4.appspot.com/4.jpg" 
+                    alt="Gambar 4" 
+                    onerror="this.onerror=null; this.src='assets/images/4.jpg';">
+                <div class="char-name">Skadi alter</div>
+            </div>
+            <div class="image-container">
+                <img 
+                    src="https://storage.googleapis.com/third-nature-436706-t4.appspot.com/5.jpg" 
+                    alt="Gambar 5" 
+                    onerror="this.onerror=null; this.src='assets/images/5.jpg';">
+                <div class="char-name">Ellen Joe</div>
+            </div>
+            <div class="image-container">
+                <img 
+                    src="https://storage.googleapis.com/third-nature-436706-t4.appspot.com/6.jpg" 
+                    alt="Gambar 6" 
+                    onerror="this.onerror=null; this.src='assets/images/6.jpg';">
+                <div class="char-name">Changli</div>
+            </div>            
+        </div>
+        <label for="toggle" class="toggle-button">Back to Profile</label>
+    </div>
+</body>
+
+</html>
